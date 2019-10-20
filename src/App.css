@@ -20,3 +20,8 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* overwrite not-allowed cursor */
+.ant-menu-item-disabled {
+  cursor: default !important;
+}
