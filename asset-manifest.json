@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/blog-ivelthoven-nl/static/css/main.9605648d.chunk.css",
+    "main.js": "/blog-ivelthoven-nl/static/js/main.3226488a.chunk.js",
+    "main.js.map": "/blog-ivelthoven-nl/static/js/main.3226488a.chunk.js.map",
+    "runtime-main.js": "/blog-ivelthoven-nl/static/js/runtime-main.c1aff385.js",
+    "runtime-main.js.map": "/blog-ivelthoven-nl/static/js/runtime-main.c1aff385.js.map",
+    "static/css/2.aa7fcd32.chunk.css": "/blog-ivelthoven-nl/static/css/2.aa7fcd32.chunk.css",
+    "static/js/2.8ae4535d.chunk.js": "/blog-ivelthoven-nl/static/js/2.8ae4535d.chunk.js",
+    "static/js/2.8ae4535d.chunk.js.map": "/blog-ivelthoven-nl/static/js/2.8ae4535d.chunk.js.map",
+    "index.html": "/blog-ivelthoven-nl/index.html",
+    "precache-manifest.d11b8cef47732c61c25256d695aa461f.js": "/blog-ivelthoven-nl/precache-manifest.d11b8cef47732c61c25256d695aa461f.js",
+    "service-worker.js": "/blog-ivelthoven-nl/service-worker.js",
+    "static/css/2.aa7fcd32.chunk.css.map": "/blog-ivelthoven-nl/static/css/2.aa7fcd32.chunk.css.map",
+    "static/css/main.9605648d.chunk.css.map": "/blog-ivelthoven-nl/static/css/main.9605648d.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c1aff385.js",
+    "static/css/2.aa7fcd32.chunk.css",
+    "static/js/2.8ae4535d.chunk.js",
+    "static/css/main.9605648d.chunk.css",
+    "static/js/main.3226488a.chunk.js"
+  ]
+}
