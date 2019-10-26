@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from "react";
-import requestor from "../helpers/requestor";
+import React, { useState } from "react";
 import notification from "../helpers/notification";
-import { Layout, Divider, Typography, Modal } from "antd";
+import { Layout, Modal } from "antd";
 import { Redirect } from "react-router-dom";
 
 import Nav from "../components/Nav";
-import BlogForm from "../components/BlogForm";
-import CategoryForm from "../components/CategoryForm";
 import LoginForm from "../components/LoginForm";
 
 import { baseUrl } from "../config.json";
-
-const { Title } = Typography;
 
 export default () => {
   // const [categories, setCategories] = useState([]);
