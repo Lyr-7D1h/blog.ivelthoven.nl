@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import DateSider from "../components/DateSider";
 import Nav from "../components/Nav";
 import BlogCard from "../components/BlogCard";
+import SubNav from "../components/SubNav";
 
 export default () => {
   const [blogs, setBlogs] = useState([]);
@@ -18,25 +19,25 @@ export default () => {
         setCategories(data);
       })
       .catch(err => {
-        notification.err("Could not fetch Blogs", err.message);
+        notification.error("Could not fetch Blogs", err.message);
       });
     requestor("GET", "blog")
       .then(data => {
         setBlogs(data);
       })
       .catch(err => {
-        notification.err("Could not fetch Blogs", err.message);
+        notification.error("Could not fetch Blogs", err.message);
       });
   }, []);
 
-  console.log(blogs);
+  console.log(categories);
 
   const subNav = (
     <Menu
       mode="horizontal"
       defaultSelectedKeys={"0"}
       style={{
-        lineHeight: "64px",
+        lineHeight: "50px",
         float: "center",
         display: "inline",
         paddingLeft: "20px"
@@ -57,13 +58,14 @@ export default () => {
       </Menu.Item>
     </Menu>
   );
+
   return (
     <Layout>
       <Nav selected="1" />
       <Layout>
-        <DateSider></DateSider>
+        <DateSider dates={[new Date(), new Date()]} />
         <Layout>
-          {subNav}
+          <SubNav items={categories.map(category => category.name)} />
           <div style={{ padding: "24px 24px 24px" }}>
             CONTENT
             {blogs && blogs.map((blog, i) => <BlogCard blog={blog} key={i} />)}
