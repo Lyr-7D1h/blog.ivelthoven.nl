@@ -11,7 +11,6 @@ import { baseUrl } from "../config.json";
 export default () => {
   // const [categories, setCategories] = useState([]);
   const [isVisible, setIsVisible] = useState(true);
-
   // useEffect(() => {
   //   requestor("GET", "blog/category")
   //     .then(categories => {
@@ -24,22 +23,13 @@ export default () => {
 
   // const postBlog = () => {};
 
-  // const postCategory = data => {
-  //   requestor("POST", "blog/category", data)
-  //     .then(() => {
-  //       notification.success("Created");
-  //     })
-  //     .catch(err => {
-  //       notification.error("Could not create", err.message);
-  //     });
-  // };
-
   const submitHandler = values => {
     if (values.username && values.password) {
       var xhr = new XMLHttpRequest();
 
       xhr.addEventListener("load", () => {
         if (xhr.status === 200) {
+          document.cookie = "loggedIn=true;Path=/";
           notification.success("Logged In");
           setIsVisible(false);
         } else {
@@ -47,14 +37,16 @@ export default () => {
         }
       });
 
-      xhr.open("POST", baseUrl + "auth");
+      xhr.open("POST", baseUrl + "auth", true);
 
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.setRequestHeader(
         "Authorization",
         "Basic " + btoa(`${values.username}:${values.password}`)
       );
+      // xhr.setRequestHeader(`Access-Control-Allow-Credentials`, true);
 
+      xhr.withCredentials = true;
       xhr.send();
     }
   };

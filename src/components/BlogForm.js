@@ -1,16 +1,34 @@
 import React from "react";
+import requestor from "../helpers/requestor";
+import notification from "../helpers/notification";
 import { Form, Input, Button, Select } from "antd";
 
 const { Option } = Select;
 const { TextArea } = Input;
 
 const BlogForm = ({ categories, form, onSubmit }) => {
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+
+  //   form.validateFields((err, values) => {
+  //     if (!err) {
+  //       onSubmit(values);
+  //     }
+  //   });
+  // };
+
   const handleSubmit = e => {
     e.preventDefault();
-
     form.validateFields((err, values) => {
+      console.log(values);
       if (!err) {
-        onSubmit(values);
+        requestor("POST", "blog/category", values)
+          .then(() => {
+            notification.success("Created");
+          })
+          .catch(err => {
+            notification.error("Could not create", err.message);
+          });
       }
     });
   };
