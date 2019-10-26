@@ -25,3 +25,7 @@
 .ant-menu-item-disabled {
   cursor: default !important;
 }
+
+.hidden {
+  display: none !important;
+}

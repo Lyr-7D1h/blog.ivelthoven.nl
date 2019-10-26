@@ -14,7 +14,9 @@ function App() {
     <BrowserRouter forceRefresh={!supportsHistory}>
       <Route exact path="/" component={HomePage} />
       <Route exact path="/projects" component={ProjectsPage} />
-      <Route exact path="/admin" component={AdminPage} />
+      <Route exact path="/admin">
+        <AdminPage />
+      </Route>
     </BrowserRouter>
   );
 }

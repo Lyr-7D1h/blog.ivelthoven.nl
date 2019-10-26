@@ -1,50 +1,85 @@
 import React, { useEffect, useState } from "react";
 import requestor from "../helpers/requestor";
 import notification from "../helpers/notification";
-import { Layout, Divider, Typography } from "antd";
+import { Layout, Divider, Typography, Modal } from "antd";
+import { Redirect } from "react-router-dom";
 
 import Nav from "../components/Nav";
 import BlogForm from "../components/BlogForm";
 import CategoryForm from "../components/CategoryForm";
+import LoginForm from "../components/LoginForm";
+
+import { baseUrl } from "../config.json";
 
 const { Title } = Typography;
 
 export default () => {
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
+  const [isVisible, setIsVisible] = useState(true);
 
-  useEffect(() => {
-    requestor("GET", "blog/category")
-      .then(categories => {
-        setCategories(categories);
-      })
-      .catch(err => {
-        notification.error(err.message);
+  // useEffect(() => {
+  //   requestor("GET", "blog/category")
+  //     .then(categories => {
+  //       setCategories(categories);
+  //     })
+  //     .catch(err => {
+  //       notification.error(err.message);
+  //     });
+  // }, []);
+
+  // const postBlog = () => {};
+
+  // const postCategory = data => {
+  //   requestor("POST", "blog/category", data)
+  //     .then(() => {
+  //       notification.success("Created");
+  //     })
+  //     .catch(err => {
+  //       notification.error("Could not create", err.message);
+  //     });
+  // };
+
+  const submitHandler = values => {
+    if (values.username && values.password) {
+      var xhr = new XMLHttpRequest();
+
+      xhr.addEventListener("load", () => {
+        if (xhr.status === 200) {
+          setIsVisible(false);
+        } else {
+          notification.error(`Request failed`, `${xhr.statusText}`);
+        }
       });
-  }, []);
 
-  const postBlog = () => {};
+      xhr.open("POST", baseUrl + "auth");
 
-  const postCategory = data => {
-    requestor("POST", "blog/category", data)
-      .then(() => {
-        notification.success("Created");
-      })
-      .catch(err => {
-        notification.error("Could not create", err.message);
-      });
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.setRequestHeader(
+        "Authorization",
+        "Basic " + btoa(`${values.username}:${values.password}`)
+      );
+
+      xhr.send();
+    }
   };
 
   return (
     <Layout>
-      <Nav selected="4" />
+      <Nav selected="-1" />
       <Layout>
-        <Layout style={{ padding: "24px 24px 24px" }}>
-          <Title level={2}>Blogs</Title>
-          {/* <BlogForm categories={categories} onSubmit={postBlog} /> */}
-          <Divider />
-          <Title level={2}>Category</Title>
-          <CategoryForm categories={categories} onSubmit={postCategory} />
-        </Layout>
+        <Modal
+          title="LOGIN"
+          visible={isVisible}
+          onCancel={() => {
+            console.log("TEST");
+            return;
+          }}
+          okButtonProps={{ className: "hidden" }}
+          cancelButtonProps={{ className: "hidden" }}
+        >
+          <LoginForm onSubmit={submitHandler} />
+        </Modal>
+        {isVisible || <Redirect to="/" />}
       </Layout>
     </Layout>
   );

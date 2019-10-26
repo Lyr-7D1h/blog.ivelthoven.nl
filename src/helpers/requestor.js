@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:5000/";
+import { baseUrl } from "../config.json";
 
 export default (method, route, data) => {
   return new Promise((resolve, reject) => {
