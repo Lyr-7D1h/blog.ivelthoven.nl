@@ -71,14 +71,14 @@ export default () => {
           title="LOGIN"
           visible={isVisible}
           onCancel={() => {
-            console.log("TEST");
-            return;
+            setIsVisible(false);
           }}
           okButtonProps={{ className: "hidden" }}
           cancelButtonProps={{ className: "hidden" }}
         >
           <LoginForm onSubmit={submitHandler} />
         </Modal>
+        {/* TODO: Create Admin Page */}
         {isVisible || <Redirect to="/" />}
       </Layout>
     </Layout>
