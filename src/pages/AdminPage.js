@@ -40,6 +40,7 @@ export default () => {
 
       xhr.addEventListener("load", () => {
         if (xhr.status === 200) {
+          notification.success("Logged In");
           setIsVisible(false);
         } else {
           notification.error(`Request failed`, `${xhr.statusText}`);
