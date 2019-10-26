@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.9605648d.chunk.css",
-    "main.js": "./static/js/main.04918d7f.chunk.js",
-    "main.js.map": "./static/js/main.04918d7f.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.b9fb8b40.js",
-    "runtime-main.js.map": "./static/js/runtime-main.b9fb8b40.js.map",
-    "static/css/2.aa7fcd32.chunk.css": "./static/css/2.aa7fcd32.chunk.css",
-    "static/js/2.103e2e5b.chunk.js": "./static/js/2.103e2e5b.chunk.js",
-    "static/js/2.103e2e5b.chunk.js.map": "./static/js/2.103e2e5b.chunk.js.map",
-    "index.html": "./index.html",
-    "precache-manifest.4649d89e4f593099b723b2302d28ab6c.js": "./precache-manifest.4649d89e4f593099b723b2302d28ab6c.js",
-    "service-worker.js": "./service-worker.js",
-    "static/css/2.aa7fcd32.chunk.css.map": "./static/css/2.aa7fcd32.chunk.css.map",
-    "static/css/main.9605648d.chunk.css.map": "./static/css/main.9605648d.chunk.css.map"
+    "main.css": "/blog.ivelthoven.nl/static/css/main.ebf7a5ed.chunk.css",
+    "main.js": "/blog.ivelthoven.nl/static/js/main.2b3c59de.chunk.js",
+    "main.js.map": "/blog.ivelthoven.nl/static/js/main.2b3c59de.chunk.js.map",
+    "runtime-main.js": "/blog.ivelthoven.nl/static/js/runtime-main.9c163497.js",
+    "runtime-main.js.map": "/blog.ivelthoven.nl/static/js/runtime-main.9c163497.js.map",
+    "static/css/2.aa7fcd32.chunk.css": "/blog.ivelthoven.nl/static/css/2.aa7fcd32.chunk.css",
+    "static/js/2.be66ecf4.chunk.js": "/blog.ivelthoven.nl/static/js/2.be66ecf4.chunk.js",
+    "static/js/2.be66ecf4.chunk.js.map": "/blog.ivelthoven.nl/static/js/2.be66ecf4.chunk.js.map",
+    "index.html": "/blog.ivelthoven.nl/index.html",
+    "precache-manifest.a9b9618d95074dde86c8c9c81685efc1.js": "/blog.ivelthoven.nl/precache-manifest.a9b9618d95074dde86c8c9c81685efc1.js",
+    "service-worker.js": "/blog.ivelthoven.nl/service-worker.js",
+    "static/css/2.aa7fcd32.chunk.css.map": "/blog.ivelthoven.nl/static/css/2.aa7fcd32.chunk.css.map",
+    "static/css/main.ebf7a5ed.chunk.css.map": "/blog.ivelthoven.nl/static/css/main.ebf7a5ed.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.b9fb8b40.js",
+    "static/js/runtime-main.9c163497.js",
     "static/css/2.aa7fcd32.chunk.css",
-    "static/js/2.103e2e5b.chunk.js",
-    "static/css/main.9605648d.chunk.css",
-    "static/js/main.04918d7f.chunk.js"
+    "static/js/2.be66ecf4.chunk.js",
+    "static/css/main.ebf7a5ed.chunk.css",
+    "static/js/main.2b3c59de.chunk.js"
   ]
 }
