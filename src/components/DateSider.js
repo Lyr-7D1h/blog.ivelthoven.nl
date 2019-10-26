@@ -28,8 +28,6 @@ export default ({ dates }) => {
     !(months.indexOf(date.getMonth()) === -1) || months.push(date.getMonth());
   });
 
-  console.log(years, months);
-
   return (
     <Sider width={200} style={{ background: "#fff" }}>
       <Menu
