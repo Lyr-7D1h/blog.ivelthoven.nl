@@ -3,10 +3,9 @@ import { Layout } from "antd";
 import Nav from "../components/Nav";
 
 export default () => {
-  console.log("TEST");
   return (
     <Layout>
-      <Nav />
+      <Nav selected="2" />
     </Layout>
   );
 };

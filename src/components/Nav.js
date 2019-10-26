@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 const { Header } = Layout;
 
-export default () => {
+export default ({ selected }) => {
   return (
     <Header>
       <div className="logo" />
       <Menu
         mode="horizontal"
-        defaultSelectedKeys={["1"]}
+        defaultSelectedKeys={[selected]}
         style={{ lineHeight: "64px", float: "left" }}
         theme="dark"
       >

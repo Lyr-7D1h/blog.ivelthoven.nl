@@ -1,27 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import requestor from "../helpers/requestor";
+import notification from "../helpers/notification";
 import { Layout } from "antd";
+
 import DateSider from "../components/DateSider";
 import Nav from "../components/Nav";
-
-const { Content } = Layout;
+import BlogCard from "../components/BlogCard";
 
 export default () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    requestor("GET", "blog")
+      .then(data => {
+        setBlogs(data);
+      })
+      .catch(err => {
+        notification.err("Could not fetch Blogs", err.message);
+      });
+  }, []);
+
+  console.log(blogs);
   return (
     <Layout>
-      <Nav></Nav>
+      <Nav selected="1" />
       <Layout>
         <DateSider></DateSider>
         <Layout style={{ padding: "24px 24px 24px" }}>
-          <Content
-            style={{
-              background: "#fff",
-              padding: 24,
-              margin: 0,
-              minHeight: 280
-            }}
-          >
-            Content
-          </Content>
+          {blogs && blogs.map((blog, i) => <BlogCard blog={blog} key={i} />)}
         </Layout>
       </Layout>
     </Layout>
