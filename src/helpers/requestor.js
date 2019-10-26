@@ -14,11 +14,7 @@ export default (method, route, data) => {
           }
         }
       }
-      reject(
-        new Error(
-          `Request failed with Code: ${xhr.status} and with Body: ${xhr.statusText}`
-        )
-      );
+      reject(new Error(`Request failed with Code: ${xhr.statusText}`));
     });
 
     xhr.open(method, baseUrl + route);

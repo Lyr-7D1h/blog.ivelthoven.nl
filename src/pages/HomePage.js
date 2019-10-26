@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import requestor from "../helpers/requestor";
 import notification from "../helpers/notification";
 import { Layout } from "antd";
+import Cookies from "js-cookie";
 
 import DateSider from "../components/DateSider";
 import Nav from "../components/Nav";
@@ -16,7 +17,7 @@ export default () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    setLoggedIn(document.cookie.split(new RegExp(";|="))[1] === "true");
+    setLoggedIn(Cookies.get("loggedIn"));
 
     requestor("GET", "blog/category")
       .then(data => {

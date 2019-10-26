@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import notification from "../helpers/notification";
 import { Layout, Modal } from "antd";
 import { Redirect } from "react-router-dom";
+import Cookies from "js-cookie";
 
 import Nav from "../components/Nav";
 import LoginForm from "../components/LoginForm";
@@ -29,7 +30,7 @@ export default () => {
 
       xhr.addEventListener("load", () => {
         if (xhr.status === 200) {
-          document.cookie = "loggedIn=true;Path=/";
+          Cookies.set("loggedIn", true, { path: "/" });
           notification.success("Logged In");
           setIsVisible(false);
         } else {
