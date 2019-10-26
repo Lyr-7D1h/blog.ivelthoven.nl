@@ -1,6 +1,6 @@
 {
   "name": "blog.ivelthoven.nl",
-  "homepage": "http://ivelthoven.github.io/blog.ivelthoven.nl",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
